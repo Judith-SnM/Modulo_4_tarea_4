@@ -33,12 +33,11 @@ class Reproductor extends Multimedia {
     }
 
     playMultimedia() {
-        iifeDom.funcionPublica(this.url, this._id)
+        iifeDom.funcionPublica(urlRetrasado, this._id)
     }
     setInicio(tiempo) {
         const urlRetrasado = `${this.url}?start=${tiempo}`;
-        iifeDom.funcionPublica(urlRetrasado, this._id);
-
+        iifeDom.funcionPublica(urlRetrasado, this._id)
     }
 }
 
@@ -46,8 +45,8 @@ const musica = new Reproductor("https://www.youtube.com/embed/epvaHZdUIEM", "mus
 const pelicula = new Reproductor("https://www.youtube.com/embed/b0uwLmqs3hw", "peliculas")
 const serie = new Reproductor("https://www.youtube.com/embed/vAKBZeQklQw", "series")
 
-musica.setInicio(5)
-pelicula.setInicio(5)
+musica.setInicio(10)
+pelicula.setInicio(15)
 serie.setInicio(5)
 
 musica.playMultimedia()
