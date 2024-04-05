@@ -11,7 +11,6 @@ const iifeDom = (() => {
     }
 })()
 
-
 class Multimedia {
     #url;
     constructor(url) {
@@ -37,20 +36,21 @@ class Reproductor extends Multimedia {
         iifeDom.funcionPublica(this.url, this._id)
     }
     setInicio(tiempo) {
-        const urlRetrasado= `${this.url}?start=${tiempo}`;
+        const urlRetrasado = `${this.url}?start=${tiempo}`;
         iifeDom.funcionPublica(urlRetrasado, this._id);
-        
-     }
+
+    }
 }
 
-const musica = new Reproductor("https://www.youtube.com/watch?v=A18ciouGCS4","musica")
-const pelicula = new Reproductor("https://www.youtube.com/watch?v=9N7EKTm4oaQ", "peliculas")
-const serie = new Reproductor("https://www.youtube.com/watch?v=LgYgY7xmzRM", "series")
+const musica = new Reproductor("https://www.youtube.com/embed/epvaHZdUIEM", "musica")
+const pelicula = new Reproductor("https://www.youtube.com/embed/b0uwLmqs3hw", "peliculas")
+const serie = new Reproductor("https://www.youtube.com/embed/vAKBZeQklQw", "series")
 
-musica.setInicio(30)
-pelicula.setInicio(30)
-serie.setInicio(30)
+musica.setInicio(5)
+pelicula.setInicio(5)
+serie.setInicio(5)
 
 musica.playMultimedia()
 pelicula.playMultimedia()
 serie.playMultimedia()
+
